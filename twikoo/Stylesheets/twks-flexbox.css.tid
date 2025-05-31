@@ -1,0 +1,37 @@
+created: 20250321130752772
+creator: uzvg
+modified: 20250531015122401
+modifier: uzvg
+revision: 1
+tags: $:/tags/Stylesheet
+title: $:/plugins/uzvg/Stylesheets/twks-flexbox.css
+type: text/vnd.tiddlywiki
+
+.twks-flexbox-row-right{
+	display: flex;
+	flex-direction:row;
+	justify-content:flex-end;
+}
+
+.twks-flexbox-row-space-between{
+	display:flex;
+	justif-content:space-between;
+}
+
+.twks-flexbox-row-flow-wrap {
+	display: flex;
+	flow-wrap:wrap;
+}
+
+.twks-btn-container {
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	justify-content:space-between;
+}
+
+.twks-single-btn-container-right-align {
+	display:flex;
+	flex-direction:row;
+	justify-content:flex-end;
+}

@@ -1,0 +1,14 @@
+caption: 
+created: 20250321110516969
+description: 
+modified: 20250531014511980
+revision: 1
+tags: $:/tags/Image
+title: $:/plugins/uzvg/images/CommentClose
+type: text/vnd.tiddlywiki
+
+\parameters (size:"22pt")
+	<svg class="tc-image-NewIcon tc-image-button" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width=<<size>> height=<<size>>>
+	<!--Here you can paste the svg code!-->
+		<path d="M484 853l-284 171V853H114a57 57 0 0 1-57-57V114a57 57 0 0 1 57-57h796a57 57 0 0 1 57 57v683a57 57 0 0 1-57 57H484z"/>
+	</svg>

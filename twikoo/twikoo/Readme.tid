@@ -1,0 +1,38 @@
+created: 20250302034914853
+modified: 20250326082943699
+modifier: uzvg
+revision: 6
+title: $:/plugins/uzvg/twikoo/Readme
+type: text/vnd.tiddlywiki
+
+!! Twikoo Comments for TiddlyWiki:
+
+This plugin integrates ''Twikoo'' (a lightweight commenting system) into your TiddlyWiki, allowing you to add a comment section to specific tiddlers.
+
+!! Backend Configuration Prerequisites:
+
+Before using the plugin, ensure you have completed the following steps:
+
+# Follow the official Twikoo documentation 👉 [[Twikoo Quick Start Guide|https://twikoo.js.org/]] to deploy the backend service (e.g., Vercel).
+# Obtain a valid `envId` (environment ID) from your Twikoo backend service.
+
+> Note: The backend service must be properly configured and accessible to ensure the comment system works.
+
+!! Frontend Configuration in TiddlyWiki:
+
+Go to `Settings` tab to configure your twikoo comment plugin in tiddlywiki.
+
+!! Twikoo Config backup:
+
+The twikoo configs was saved in [[$:/config/tw-twikoo]] tiddler, you can export the tiddler and backup your twikoo config.
+
+!! Source Code & Issue:
+
+The plugin is open-source and available on GitHub: 🔗 [[GitHub Repository|https://github.com/uzvg/tw-twikoo]]
+
+; Notes:
+* Ensure your Twikoo backend service is running and accessible.
+* Customize the `path` and `filter` expressions carefully to match your TiddlyWiki structure.
+* Report issues or contribute to the plugin via the GitHub repository.
+
+''Happy commenting!'' 🚀

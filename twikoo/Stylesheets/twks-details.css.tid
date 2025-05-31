@@ -1,0 +1,22 @@
+created: 20240910140403637
+creator: uzvg
+modified: 20250531014549112
+modifier: uzvg
+revision: 1
+tags: $:/tags/Stylesheet
+title: $:/plugins/uzvg/Stylesheets/twks-details.css
+type: text/vnd.tiddlywiki
+
+.twks-btn-details {
+	width: 100%;
+	text-align: left;
+	border: none;
+	line-height: 1.25rem;
+}
+
+.twks-details {
+	overflow: auto;
+	margin: 0;
+	padding: 0 1em 0;
+	background: <<color page-background>>;
+}

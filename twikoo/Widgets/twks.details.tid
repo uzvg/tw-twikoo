@@ -1,0 +1,47 @@
+code-body: yes
+created: 20241016171224437
+creator: uzvg
+modified: 20250531014616659
+modifier: uzvg
+revision: 1
+tags: $:/tags/Global
+title: $:/plugins/uzvg/Widgets/twks.details
+type: text/vnd.tiddlywiki
+
+\widget $twks.details(
+	summary:"Summary:",
+	closeSummary,
+	icon,
+	closeIcon,
+	default:"close",
+	state:"$:/state/details",
+	btnClass:"twks-btn-details",
+	btnBoxClass,
+	bdClass:"twks-details")
+\whitespace trim
+<$qualify name="stateTiddler" title=<<state>>>
+	<$reveal type="match" default=<<default>> state=<<stateTiddler>> text="close">
+		<div class=<<btnBoxClass>>>
+			<$button set=<<stateTiddler>> setTo="open" class=<<btnClass>>>
+				&nbsp;
+				<$transclude $tiddler={{{ [<icon>!is[blank]else[$:/core/images/right-arrow]] }}} $mode="inline"/>
+				&nbsp;
+				<<summary>>
+			</$button>
+		</div>
+	</$reveal>
+	<$reveal type="match" default=<<default>> state=<<stateTiddler>> text="open">
+		<div class=<<btnBoxClass>>>
+			<$button set=<<stateTiddler>> setTo="close" class=<<btnClass>>>
+				&nbsp;
+				<$transclude $tiddler={{{ [<closeIcon>!is[blank]else[$:/core/images/down-arrow]] }}} $mode="inline"/>
+				&nbsp;
+				<$text text={{{ [<closeSummary>!is[blank]else<summary>] }}} />
+			</$button>
+		</div>
+	<div class=<<bdClass>>>
+		<$slot $name="ts-raw" />
+	</div>
+	</$reveal>
+</$qualify>
+\end

@@ -1,0 +1,49 @@
+created: 20250321123218240
+list-after: $:/core/ui/ViewTemplate/body
+modified: 20250531020121112
+revision: 1
+tags: $:/tags/ViewTemplate
+title: $:/plugins/uzvg/twikoo/ViewTemplate
+type: text/vnd.tiddlywiki
+
+<!-- Twikoo commment will be disabled in following tiddlers:
+	1. missing tiddler
+	2. system tiddler
+	3. image tiddler
+	4. Private tiddler
+	5. Journal tiddler
+	6. If the tiddler has "twikoo-hide" field, then twikoo comment will be disabled
+	7. If the tiddler has empty text field, then twikoo comment will be disabled
+-->
+
+\procedure twikoo-config-tiddler() $:/config/tw-twikoo
+\procedure twikoo-default-filter()
+	[all[current]!is[missing]!is[system]!visibility[Private]!is[image]!tag[Journal]!has[twikoo-hide]has[text]]
+\end
+
+\function get-twikoo-envId() [<twikoo-config-tiddler>getindex[envId]]
+\function get-twikoo-lang() [<twikoo-config-tiddler>getindex[lang]]
+\function get-twikoo-region() [<twikoo-config-tiddler>getindex[region]]
+\function twikoo-path-filter() [<twikoo-config-tiddler>getindex[path]]
+\function get-twikoo-path() [subfilter<twikoo-path-filter>!is[blank]] :else[<storyTiddler>get[created]]
+\function get-twikoo-user-filter() [<twikoo-config-tiddler>getindex[filter]]
+\function get-twikoo-filter() [<get-twikoo-user-filter>!is[blank]else<twikoo-default-filter>]
+
+<$list filter=<<get-twikoo-filter>>>
+	<$twks.details
+		summary="Open Comments"
+		closeSummary="Close Comments"
+		icon="$:/plugins/uzvg/images/Comment"
+		closeIcon="$:/plugins/uzvg/images/CommentClose"
+		default="close"
+		state="$:/state/detail/comments"
+		btnClass="twks-comment-btn"
+		btnBoxClass="twks-flexbox-row-right"
+		bdClass="twks-comment-body">
+	<$twikoo
+		envId=<<get-twikoo-envId>>
+		region=<<get-twikoo-region>>
+		path=<<get-twikoo-path>>
+		lang=<<get-twikoo-lang>> />
+	</$twks.details>
+</$list>

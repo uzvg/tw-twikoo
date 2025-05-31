@@ -1,0 +1,19 @@
+caption: 
+created: 20250321110140781
+description: 
+modified: 20250531014412471
+revision: 1
+tags: $:/tags/Image
+title: $:/plugins/uzvg/images/Comment
+type: text/vnd.tiddlywiki
+
+\parameters (size:"22pt")
+	<svg class="tc-image-comment tc-image-button" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width=<<size>> height=<<size>>>
+	<!--Here you can paste the svg code!-->
+  <path d="
+    M 484 853 l-284 171 V 853 H 114 a 57 57 0 0 1-57-57 V 114 a 57 57 0 0 1 57-57 h 796 a 57 57 0 0 1 57 57 v 683 a 57 57 0 0 1-57 57 H 484 Z
+    M 228 228 v 85 h 569 V 228 H 228 Z
+    M 228 409 v 85 h 569 V 409 H 228 Z
+    M 228 589 v 85 h 341 V 589 H 228 Z
+  "/>
+</svg>
