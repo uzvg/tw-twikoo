@@ -1,6 +1,6 @@
 created: 20250321123206639
 list-before: 
-modified: 20250531013551934
+modified: 20250614095712527
 revision: 2
 title: $:/plugins/uzvg/twikoo/Settings
 type: text/vnd.tiddlywiki
@@ -76,7 +76,7 @@ The `filter` setting is also a filter expression that determines which tiddlers 
 The default filter expression is:
 
 ```
-[all[current]!is[missing]!is[system]!visibility[Private]!is[image]!tag[Journal]!has[twikoo-hide]has[text]]
+[all[current]!is[missing]!is[system]!visibility[Private]!is[image]!tag[Journal]has[text]]
 ```
 
 You can customize this filter expression. For example, `[all[current]tag[PermanentNotes]]` would add comment sections to all tiddlers tagged with "PermanentNotes".
