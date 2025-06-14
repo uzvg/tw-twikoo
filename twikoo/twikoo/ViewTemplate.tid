@@ -1,6 +1,6 @@
 created: 20250321123218240
 list-after: $:/core/ui/ViewTemplate/body
-modified: 20250531020121112
+modified: 20250614095315260
 revision: 1
 tags: $:/tags/ViewTemplate
 title: $:/plugins/uzvg/twikoo/ViewTemplate
@@ -18,23 +18,27 @@ type: text/vnd.tiddlywiki
 
 \procedure twikoo-config-tiddler() $:/config/tw-twikoo
 \procedure twikoo-default-filter()
-	[all[current]!is[missing]!is[system]!visibility[Private]!is[image]!tag[Journal]!has[twikoo-hide]has[text]]
+	[all[current]!is[missing]!is[system]!visibility[Private]!is[image]!tag[Journal]has[text]]
 \end
-
+\procedure twikoo-hide-subfilter() +[!has[twikoo-hide]]
 \function get-twikoo-envId() [<twikoo-config-tiddler>getindex[envId]]
 \function get-twikoo-lang() [<twikoo-config-tiddler>getindex[lang]]
 \function get-twikoo-region() [<twikoo-config-tiddler>getindex[region]]
 \function twikoo-path-filter() [<twikoo-config-tiddler>getindex[path]]
 \function get-twikoo-path() [subfilter<twikoo-path-filter>!is[blank]] :else[<storyTiddler>get[created]]
 \function get-twikoo-user-filter() [<twikoo-config-tiddler>getindex[filter]]
-\function get-twikoo-filter() [<get-twikoo-user-filter>!is[blank]else<twikoo-default-filter>]
+\function get-twikoo-filter()
+	[<get-twikoo-user-filter>!is[blank]else<twikoo-default-filter>]
+	[<twikoo-hide-subfilter>]
+	+[join[]]
+\end
 
 <$list filter=<<get-twikoo-filter>>>
 	<$twks.details
 		summary="Open Comments"
 		closeSummary="Close Comments"
-		icon="$:/plugins/uzvg/images/Comment"
-		closeIcon="$:/plugins/uzvg/images/CommentClose"
+		icon="$:/uzvg/images/Comment"
+		closeIcon="$:/uzvg/images/CommentClose"
 		default="close"
 		state="$:/state/detail/comments"
 		btnClass="twks-comment-btn"
